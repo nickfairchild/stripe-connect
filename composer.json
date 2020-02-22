@@ -1,0 +1,54 @@
+{
+    "name": "nickfairchild/stripe-connect",
+    "description": "",
+    "keywords": [
+        "nickfairchild",
+        "stripe-connect"
+    ],
+    "homepage": "https://github.com/nickfairchild/stripe-connect",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Nick Fairchild",
+            "email": "nick.fairchild@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nickfairchild\\StripeConnect\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Nickfairchild\\StripeConnect\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nickfairchild\\StripeConnect\\StripeConnectServiceProvider"
+            ],
+            "aliases": {
+                "StripeConnect": "Nickfairchild\\StripeConnect\\StripeConnectFacade"
+            }
+        }
+    }
+}
